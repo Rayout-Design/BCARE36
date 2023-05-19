@@ -1,57 +1,202 @@
-@import url('https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
-    font-family: 'Sarabun', sans-serif;
-    transition: all 0.3s !important;
+    font-family: 'Kanit', sans-serif;
 }
 
-html {
-    min-height: 100%;
-    display: flex;
+:root {
+    --color-theme-black: #070c0d;
+    --color-theme-gray: #d7d8d9;
+    --color-theme-red: #bb3d0d;
+    --color-theme-brown: #7A3D1D;
+    --color-theme-orange: #CF7F50;
+}
+
+@font-face {
+    font-family: 'vanguard';
+    src: url('./fonts/vanguard-normal.otf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'vanguard';
+    src: url('./fonts/vanguard-bold.otf');
+    font-weight: bold;
+}
+
+.font-vanguard {
+    font-family: 'vanguard';
+}
+
+.text-brown {
+    color: var(--color-theme-brown);
+}
+
+.text-orange {
+    color: var(--color-theme-orange);
+}
+
+.text-red {
+    color: var(--color-theme-red);
+}
+
+.bg-black {
+    background-color: var(--color-theme-black);
+}
+
+.bg-gray {
+    background-color: var(--color-theme-gray);
+}
+
+.bg-red {
+    background-color: var(--color-theme-red);
+}
+
+.bg-brown {
+    background-color: var(--color-theme-brown);
+}
+
+.bg-orange {
+    background-color: var(--color-theme-orange);
+}
+
+.bg-gradient-1 {
+    background-image: linear-gradient(to right, var(--color-theme-brown), var(--color-theme-orange), var(--color-theme-brown));
+}
+
+.bg-gradient-2 {
+    background-image: linear-gradient(to right, var(--color-theme-brown), var(--color-theme-orange), var(--color-theme-brown), var(--color-theme-orange), var(--color-theme-brown));
+}
+
+.table td.fit,
+.table th.fit {
+    white-space: nowrap;
+    width: 1%;
+}
+
+th,
+td {
+    vertical-align: middle !important;
+}
+
+.text-overflow {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.overflow-2 {
+    -webkit-line-clamp: 2;
+}
+
+.overflow-3 {
+    -webkit-line-clamp: 3;
+}
+
+.overflow-4 {
+    -webkit-line-clamp: 4;
+}
+
+.overflow-5 {
+    -webkit-line-clamp: 5;
+}
+
+.f-shadow {
+    text-shadow: 2px 2px 4px #000000;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul.flex-screen>li {
+    flex: 1 1 auto;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }
 
 body {
-    width: 100%;
-    margin: auto;
+    background-image: url('./images/back-main-bg.png');
+    background-size: 100% auto;
+    background-position: bottom;
+    background-repeat: no-repeat;
 }
 
-.select-header:hover, .select-footer:hover, .select-content:hover, .remove-content:hover {
-    transform: scale(1.03);
+#HeaderLogo {
+    min-height: 75px;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
 }
 
-.hover-scale:hover {
-    transform: scale(1.2);
+#NavbarHeader li.nav-item {
+    margin: 0 1rem;
 }
 
-.img-banner h1 {
-    position: absolute;
-    top: 15%;
-    right: 10%;
+#NavbarHeader .nav-link {
+    color: var(--color-theme-black);
 }
 
-.slide-banner .row {
-    position: absolute;
-    top: 15%;
-    z-index: 9;
+#NavbarHeader .nav-link.active {
+    font-weight: bold;
 }
 
-.remove-content {
-    position: absolute;
-    top: 25px;
-    right: 35px;
-    z-index: 1000;
-}
-.edit-content {
-    position: absolute;
-    top: 25px;
-    right: 100px;
-    z-index: 1000;
-}
-
-section {
+.header-home {
+    min-height: 70vh;
+    background-image: url('./images/home-header-bg.png');
+    background-size: cover;
+    display: flex;
     position: relative;
 }
 
-h5 {
-    line-height: 30px;
+.header-home h1 {
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 50px;
+    font-size: 4vw;
+}
+
+.header-services-title {
+    height: 60px;
+}
+
+.header-services-list img {
+    height: 50px;
+}
+
+#services-tab .services-nav {
+    color: white;
+}
+
+#services-tab .services-nav img {
+    height: 50px;
+}
+
+#services-tab .services-nav.active img,
+#services-tab .services-nav:hover img {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+
+#services-tab .services-nav.active,
+#services-tab .services-nav:hover {
+    background-color: white;
+    color: var(--color-theme-black);
+}
+
+footer li>a:hover {
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 767px) {
+    footer iframe {
+        height: 40vh;
+    }
 }
